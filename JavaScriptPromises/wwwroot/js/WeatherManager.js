@@ -10,10 +10,10 @@ class WeatherManager {
 
     getAll() {
         this._weatherService.getWeather()
-        .then(
-            data => this.displayAll(data),
-            data => $("#error-message").text(`An error occurred (${data.status}).`)
-        );
+            .then(
+                data => this.displayAll(data),
+                data => $("#error-message").text(`An error occurred (${data.status}).`)
+            );
     }
 
     // async only needed if there are any awaits in method
@@ -91,17 +91,6 @@ class WeatherManager {
             html += `<p>${weather[i].city} - ${weather[i].temperature}°C</p>`;
 
         $("#results-all").html(html);
-    }
-
-    displayWarmest(weather) {
-        let max = weather[0];
-
-        for (let i = 1; i < weather.length; ++i) {
-            if (weather[i].temperature > max.temperature)
-                max = weather[i];
-        }
-
-        $("#results-warmest").html(`<p>${max.city} - ${max.temperature}°C</p>`);
     }
 }
 
