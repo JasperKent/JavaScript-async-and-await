@@ -66,4 +66,6 @@
 # make it list as JavaScript not C#
 ###############################################################################
 *.cs linguist-detectable=false
+*.html linguist-detectable=false
+*.cshtml linguist-detectable=false
 *.js linguist-detectable=true
